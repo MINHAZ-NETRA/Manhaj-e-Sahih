@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>المنہج الصحیح — ایڈمن پینل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mirza:wght@700&family=Noto+Naskh+Arabic:wght@600&family=Noto+Nastaliq+Urdu:wght@400&family=Amiri+Quran&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#064b47;--bg:#f4faf8;--line:#d9e9e5;--teal:#0b7a70;--soft:#e3f4f0;--text:#17302d;--muted:#6b8480;--red:#b3261e;--gold:#d6b264;--r:16px;--sh:0 1px 2px rgba(6,75,71,.05),0 8px 22px rgba(6,75,71,.07);--nast:"Jameel Noori Nastaleeq","Noto Nastaliq Urdu","Segoe UI",serif}
+*{box-sizing:border-box;font-weight:400}
+[hidden]{display:none!important}
+html{background:var(--bg)}
+html,body{margin:0}
+body{font-family:var(--nast);color:var(--text);line-height:2.1;font-size:1.1rem}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23cfe6df' stroke-width='.9'%3E%3Crect x='18' y='18' width='64' height='64'/%3E%3Crect x='18' y='18' width='64' height='64' transform='rotate%2845 50 50%29'/%3E%3Ccircle cx='50' cy='50' r='15'/%3E%3C/svg%3E") no-repeat right -60px top 46vh/200px,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23cfe6df' stroke-width='.9'%3E%3Crect x='18' y='18' width='64' height='64'/%3E%3Crect x='18' y='18' width='64' height='64' transform='rotate%2845 50 50%29'/%3E%3Ccircle cx='50' cy='50' r='15'/%3E%3C/svg%3E") no-repeat left -70px bottom 9vh/220px,linear-gradient(#f2f9f6,#fafdfc 50%,#f1f8f6)}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+@font-face{font-family:"Jameel Noori Nastaleeq";src:url("JameelNoori.woff2") format("woff2");font-display:swap}
+@font-face{font-family:"Muhammadi Quranic";src:url("MuhammadiQuranic.woff2") format("woff2");font-display:swap}
+
+/* ===== Upar ka hara header ===== */
+.bar{position:sticky;top:0;z-index:30;color:#fff;padding:calc(env(safe-area-inset-top,0px) + 2px) 18px 2px;border-radius:0 0 24px 24px;border-bottom:2px solid rgba(214,178,100,.85);box-shadow:0 10px 24px rgba(6,75,71,.25);
+ background:radial-gradient(circle at 14% 130%,rgba(255,255,255,.09) 0 130px,transparent 131px),radial-gradient(circle at 86% -40%,rgba(255,255,255,.06) 0 120px,transparent 121px),linear-gradient(165deg,#0d7a70,#064b47 58%,#053f3c)}
+.bar .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:12px;min-height:70px}
+.bar h2{flex:1;min-width:0;margin:0;font:400 1.55rem/2 var(--nast);text-shadow:0 2px 12px rgba(0,0,0,.28);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* Naam: patti ke bilkul beech me (lambai aur chaurai dono me) */
+.top .in{display:grid;grid-template-columns:46px 1fr 46px;align-items:center;min-height:72px}
+.top h1{margin:0;text-align:center;font:700 clamp(1.7rem,7.5vw,2.2rem)/1.4 "Mirza","Noto Naskh Arabic","Amiri Quran",serif;letter-spacing:0;text-shadow:0 2px 12px rgba(0,0,0,.3);white-space:nowrap;padding-top:2px}
+.pbtn{min-height:40px;min-width:76px;max-width:40vw;padding:3px 16px;flex-shrink:0;border-radius:20px;border:1.5px solid rgba(255,255,255,.55);background:linear-gradient(#ecc982,#d6b264);color:#053f3c;font-size:.95rem;line-height:1.9;display:inline-flex;align-items:center;justify-content:center;transition:filter .2s,transform .15s}
+.pbtn:hover{filter:brightness(1.06)}.pbtn:active{transform:scale(.97)}.pbtn:disabled{opacity:.65;cursor:default}
+.rb{width:46px;height:46px;flex-shrink:0;border-radius:50%;border:1.5px solid rgba(214,178,100,.85);background:rgba(255,255,255,.1);color:#fff;display:grid;place-items:center;padding:0;transition:background .2s}
+.rb:hover{background:rgba(255,255,255,.2)}
+.rb svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.lgn .out{display:none}body.authed .lgn .usr{display:none}body.authed .lgn .out{display:block}
+
+/* ===== Login ka 30% transparent box ===== */
+.lov{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:18px;overflow:auto;background:rgba(3,30,28,.38);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);animation:fade .2s ease}
+@keyframes fade{from{opacity:0}}
+.lbox{width:min(340px,100%);padding:20px 18px 12px;border-radius:22px;color:#fff;
+ background:rgba(4,52,49,.7);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);border:1px solid rgba(255,255,255,.28);box-shadow:0 18px 44px rgba(0,0,0,.3);animation:pop .24s ease}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.96)}}
+.gfield{position:relative}
+.lbox input[type=password],.lbox input[type=text]{height:50px;padding:0 14px 0 50px;font-size:1.1rem;background:rgba(255,255,255,.94);border-color:transparent}
+.geye{position:absolute;left:5px;top:5px;width:40px;height:40px;border:0;background:none;color:var(--muted);border-radius:10px;display:grid;place-items:center;padding:0}
+.geye:hover{background:var(--soft);color:var(--teal)}
+.geye svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.geye .off{display:none}.geye.on .off{display:block}.geye.on .eye{display:none}
+.rem{position:relative;display:flex;align-items:center;gap:10px;margin:12px 2px 0;cursor:pointer;font-size:1.05rem;line-height:1.9;user-select:none}
+.rem input{position:absolute;opacity:0;pointer-events:none}
+.ck{width:22px;height:22px;border-radius:7px;border:1.6px solid rgba(255,255,255,.8);display:grid;place-items:center;flex-shrink:0;transition:.2s}
+.ck svg{width:14px;height:14px;stroke:#053f3c;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;opacity:0}
+.rem input:checked+.ck{background:var(--gold);border-color:var(--gold)}
+.rem input:checked+.ck svg{opacity:1}
+.rem input:focus-visible+.ck{outline:3px solid #fff;outline-offset:2px}
+.gbtn{width:100%;height:46px;margin-top:12px;border:0;border-radius:12px;background:linear-gradient(#ecc982,#d6b264);color:#053f3c;font-size:1.15rem;transition:filter .2s}
+.gbtn:hover{filter:brightness(1.06)}.gbtn:disabled{opacity:.65;cursor:default}
+.gerr{margin:8px 0 0;min-height:1.9em;color:#ffd4cf;font-size:1rem;line-height:1.7;text-align:center}
+.lbox.shake{animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+
+/* ===== Unvan ki list ===== */
+.page{max-width:760px;margin:0 auto;padding:18px 14px 130px}
+.row{display:flex;align-items:center;gap:10px;min-height:66px;margin-bottom:10px;padding:6px 14px 6px 10px;background:#fff;border:1px solid var(--line);border-inline-start:4px solid var(--teal);border-radius:var(--r);box-shadow:var(--sh);animation:in .3s ease}
+@keyframes in{from{opacity:0;transform:translateY(-8px)}}
+.row .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--navy);font-size:1.3rem;line-height:2.2}
+.eb{height:42px;padding:0 20px;flex-shrink:0;display:inline-flex;align-items:center;gap:6px;border-radius:21px;border:1.5px solid #86c8bd;background:var(--soft);color:var(--navy);font-size:1.05rem;transition:.2s}
+.eb:hover:not(:disabled){border-color:var(--teal);background:#d6efe9}
+.eb svg{display:none;width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+body:not(.authed) .eb{background:#f3f6f6;border-color:var(--line);color:var(--muted)}
+body:not(.authed) .eb svg{display:block}
+.empty{display:flex;flex-direction:column;align-items:center;gap:14px;padding:64px 0 40px;color:#7f9f9a;text-align:center}
+.empty .doc{width:84px;height:84px;stroke:#bcd9d3;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.empty .eo{display:flex;align-items:center;gap:8px}.empty .eo i{width:56px;height:1.5px;background:#cfe3de}
+.empty .eo svg{width:18px;height:18px;fill:#bcd9d3}
+.empty p{margin:0;font-size:1.3rem}
+.empty button{height:42px;padding:0 24px;border-radius:21px;border:1.5px solid var(--teal);background:#fff;color:var(--teal);font-size:1.05rem}
+
+/* ===== + button ===== */
+.fab{position:fixed;z-index:30;bottom:max(20px,env(safe-area-inset-bottom));left:max(20px,calc((100vw - 760px)/2 + 20px));width:64px;height:64px;border-radius:50%;border:1.5px solid var(--gold);background:linear-gradient(135deg,#0e8579,#064b47);color:#fff;display:grid;place-items:center;padding:0;box-shadow:0 12px 26px rgba(6,75,71,.38);animation:fabin .38s cubic-bezier(.2,1.4,.4,1);transition:filter .2s}
+.fab:hover{filter:brightness(1.1)}.fab:active{transform:scale(.95)}
+.fab svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round}
+.fabl{display:none}
+@keyframes fabin{from{opacity:0;transform:scale(.4)}}
+
+/* ===== Naya screen (editor) ===== */
+.editor{position:fixed;inset:0;z-index:40;overflow-y:auto;overscroll-behavior:contain;background:linear-gradient(#f2f9f6,#fafdfc 50%,#f1f8f6);animation:slide .28s ease}
+@keyframes slide{from{opacity:0;transform:translateY(24px)}}
+.dbtn{display:block;width:100%;height:52px;margin-top:26px;border-radius:26px;border:1.5px solid #f0c4c0;background:#fff;color:var(--red);font-size:1.15rem;transition:.2s}
+.dbtn:hover{background:#fdf1f0}
+.dbtn.sure{background:var(--red);border-color:var(--red);color:#fff}
+.ebody{max-width:760px;margin:0 auto;padding:18px 14px 70px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh)}
+.tcard{padding:16px;border-inline-start:4px solid var(--teal)}
+input[type=text],input[type=password],textarea{display:block;width:100%;font:inherit;font-size:1.15rem;color:var(--text);background:#fbfcfd;border:1.5px solid var(--line);border-radius:12px;padding:0 14px;transition:.2s}
+input[type=text],input[type=password]{height:54px}
+textarea{height:170px;padding:12px 14px;resize:none;line-height:2.2;overflow:hidden}
+input::placeholder,textarea::placeholder{color:#9aa6b4}
+input:focus,textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px var(--soft);background:#fff}
+input[dir=ltr]{text-align:left;font-family:"Segoe UI",system-ui,sans-serif;font-size:1rem}
+#ttl{font-size:1.3rem}
+textarea.ur{font-family:var(--nast);font-size:1.5rem;line-height:2.5;word-spacing:.15em;text-align:right}
+textarea.ar{font-family:"Muhammadi Quranic","Amiri Quran","Noto Naskh Arabic",serif;font-size:1.45rem;line-height:2.6;word-spacing:.18em;text-align:right;color:#0e2033}
+
+/* Unvan likhte hi neeche 3 chhote buttons */
+.cbox{margin-top:14px;padding:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;animation:in .3s ease;scroll-margin-bottom:14px}
+.chip{height:48px;min-width:0;border-radius:14px;border:1.5px solid #86c8bd;background:linear-gradient(#f4fcfa,#e1f3ee);color:var(--navy);font:600 1.05rem/1 "Noto Naskh Arabic","Amiri Quran",serif;display:flex;align-items:center;justify-content:center;padding:7px 0 0;transition:.2s}
+.chip:hover{border-color:var(--teal);background:linear-gradient(#ecf9f6,#d6efe9)}
+.chip:active{transform:scale(.96)}
+
+.pc{margin-top:14px;overflow:hidden;border-inline-start:4px solid var(--teal);animation:in .3s ease;scroll-margin:90px 0 40px}
+.pc[data-type=ar]{border-inline-start-color:var(--gold)}
+.pc[data-type=ref]{border-inline-start-color:#7fa8a3}
+.pch{height:60px;display:flex;align-items:center;gap:8px;padding:0 8px 0 12px;background:linear-gradient(#fbfefd,#f0f8f6)}
+.badge{flex:1;padding:0 6px;color:var(--navy);font-size:1.35rem}
+.tools{display:flex;gap:6px}
+.ib{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--navy);display:grid;place-items:center;padding:0;transition:.2s}
+.ib svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ib:hover:not(:disabled){border-color:var(--teal);color:var(--teal)}
+.ib.del:hover{border-color:#f0c4c0;color:var(--red)}
+.ib:disabled{opacity:.3;cursor:not-allowed}
+.pcb{padding:14px;border-top:1px solid var(--line)}
+/* Hawala: 6 column ki grid — musannif(4)+wafat(2) / kitab(6) / jild(3)+safha(3) / link(6) / aawaz(6) */
+.rg{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;padding:14px;border-top:1px solid var(--line)}
+.rg>*{min-width:0}
+.rg input{height:50px;font-size:1.05rem}
+
+/* Audio uploader */
+.audio{position:relative;border:1.5px dashed #9fc3c0;border-radius:14px;background:linear-gradient(#fbfefe,#f3f9f9);transition:.2s}
+.audio.over{border-color:var(--teal);background:var(--soft);box-shadow:0 0 0 4px var(--soft)}
+.audio.has{border-style:solid;border-color:var(--line);background:#fff}
+.drop{width:100%;border:0;background:none;color:var(--navy);padding:20px 16px;display:flex;flex-direction:column;align-items:center;gap:6px;border-radius:14px}
+.audio.has .drop{display:none}
+.dico{width:56px;height:56px;border-radius:50%;background:var(--soft);display:grid;place-items:center;margin-bottom:4px;transition:transform .2s}
+.drop:hover .dico{transform:scale(1.06)}
+.dico svg{width:28px;height:28px;stroke:var(--teal);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.dt{font-size:1.2rem;line-height:1.6}
+.dh{font-size:.95rem;color:var(--muted);line-height:1.6}
+.player{display:none;align-items:center;gap:12px;padding:14px}
+.audio.has .player{display:flex}
+.play{width:54px;height:54px;border-radius:50%;border:0;background:var(--teal);color:#fff;flex-shrink:0;display:grid;place-items:center;padding:0;box-shadow:0 4px 10px rgba(14,124,118,.28);transition:background .2s}
+.play:hover{background:#0b6964}
+.play svg{width:22px;height:22px;fill:currentColor}
+.play .pa{display:none}.play.on .pl{display:none}.play.on .pa{display:block}
+.pmid{flex:1;min-width:0}
+.pname{display:flex;align-items:baseline;gap:10px;line-height:1.6}
+.pname span:first-child{flex:1;min-width:0;color:var(--navy);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;direction:ltr;text-align:right}
+.psize{font-size:.85rem;color:var(--muted);direction:ltr;flex-shrink:0}
+.seek{-webkit-appearance:none;appearance:none;display:block;width:100%;height:20px;margin:4px 0 0;padding:0;border:0;background:none;box-shadow:none;cursor:pointer;--p:0%}
+.seek:focus{box-shadow:none;background:none}
+.seek::-webkit-slider-runnable-track{height:6px;border-radius:6px;background:linear-gradient(to left,var(--teal) var(--p),#dbe6ec var(--p))}
+.seek::-moz-range-track{height:6px;border-radius:6px;background:#dbe6ec}
+.seek::-moz-range-progress{height:6px;border-radius:6px;background:var(--teal)}
+.seek::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--teal);margin-top:-5px}
+.seek::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:#fff;border:3px solid var(--teal)}
+.seek:focus-visible{outline:none}
+.seek:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px var(--soft)}
+.ptime span{unicode-bidi:isolate;direction:ltr}
+.ptime{display:flex;justify-content:space-between;direction:rtl;font-size:.85rem;color:var(--muted);line-height:1.4;font-variant-numeric:tabular-nums}
+.ptools{display:flex;flex-direction:column;gap:6px}
+
+.toast{position:fixed;z-index:70;bottom:calc(max(20px,env(safe-area-inset-bottom)) + 84px);left:50%;transform:translate(-50%,220px);background:var(--navy);color:#fff;padding:8px 22px;border-radius:12px;box-shadow:var(--sh);transition:transform .35s;max-width:calc(100vw - 28px);text-align:center}
+.toast.show{transform:translate(-50%,0)}
+
+@media (max-width:420px){.tools{gap:4px}.ib{width:32px;height:32px}.player{gap:10px;padding:12px}.play{width:48px;height:48px}.bar h1{font-size:1.65rem}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+/* ===================== DESKTOP (900px se bada screen) — mobile design ko nahi chheda gaya ===================== */
+@media (min-width:900px){
+  *{scrollbar-width:thin;scrollbar-color:#b7d3cd transparent}
+  body{font-size:1.15rem}
+  /* header */
+  .bar{padding-left:40px;padding-right:40px;border-radius:0 0 40px 40px}
+  .bar .in{max-width:none;min-height:92px}
+  .bar.top{padding-left:32px;padding-right:32px}
+  .top .in{grid-template-columns:56px 1fr 56px;min-height:92px}
+  .top h1{font-size:2.7rem}
+  .rb{width:56px;height:56px}
+  .rb svg{width:26px;height:26px}
+  .bar h2{font-size:1.9rem}
+  .pbtn{min-height:46px;min-width:104px;padding:3px 26px;font-size:1.1rem;border-radius:23px}
+  /* login box */
+  .lbox{width:390px;padding:26px 24px 16px;border-radius:26px}
+  .lbox input[type=password],.lbox input[type=text]{height:54px;font-size:1.15rem}
+  .gbtn{height:50px;font-size:1.2rem}
+  /* list */
+  .page{max-width:none;padding:32px 32px 150px}
+  #list{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}   /* har row poori chaurai me */
+  #list .empty{grid-column:1/-1}
+  .row{margin:0;min-width:0;min-height:84px;padding:8px 20px 8px 14px;border-radius:20px;transition:transform .2s,box-shadow .2s,border-color .2s}
+  .row:hover{transform:translateY(-2px);border-color:#9fcfc6;box-shadow:0 2px 4px rgba(6,75,71,.06),0 16px 32px rgba(6,75,71,.12)}
+  .row .t{font-size:1.45rem}
+  .eb{height:46px;padding:0 26px;font-size:1.1rem}
+  /* + button: desktop par label ke saath */
+  .fab{display:flex;align-items:center;gap:12px;width:auto;height:62px;padding:0 28px 0 24px;border-radius:31px;left:32px;bottom:32px}
+  .fab svg{width:26px;height:26px}
+  .fabl{display:inline;font-size:1.3rem;line-height:1.9;padding-top:2px}
+  .toast{bottom:112px}
+  /* editor */
+  /* editor header: back + label ek kinare (right), محفوظ/اپڈیٹ doosre kinare (left) */
+  /* editor patti: back arrow 4 button ke upar; title unvan box ke ek kinare, محفوظ doosre kinare */
+  .editor .bar .in{max-width:1160px;display:grid;grid-template-columns:250px minmax(0,1fr) auto;column-gap:0;align-items:center}
+  .editor .bar .in .rb{justify-self:start}
+  .editor .bar h2{margin-inline-start:32px}
+  /* editor body: ek taraf 4 button (sticky, scroll nahi hote), doosri taraf box */
+  .ebody{max-width:1240px;padding:36px 40px 100px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:0 32px;align-items:start}
+  .ebody>.tcard{grid-column:2;grid-row:1}
+  .ebody>#plist{grid-column:2;grid-row:2}
+  .ebody>.dbtn{grid-column:2;grid-row:3}
+  .ebody>.cbox{grid-column:1;grid-row:1/span 3;position:sticky;top:124px;align-self:start}
+  #chips[hidden]{display:grid!important;opacity:.45;pointer-events:none}
+  .chip[data-add=ar]{order:1}.chip[data-add=ur]{order:2}.chip[data-add=ref]{order:3}.chip[data-add=audio]{order:4}
+  .tcard{padding:22px 24px}
+  #ttl{height:64px;font-size:1.6rem}
+  .cbox{grid-template-columns:1fr;padding:0;gap:16px;margin-top:0;background:none;border:0;box-shadow:none;transition:opacity .25s}
+  .chip{height:62px;font-size:1.35rem;border:0;border-radius:16px;color:#fff;padding-top:9px;box-shadow:0 8px 18px rgba(6,75,71,.18);transition:transform .15s,filter .2s,box-shadow .2s}
+  .chip:hover{filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 12px 24px rgba(6,75,71,.26)}
+  .chip:active{transform:scale(.97)}
+  .chip[data-add=ar]{background:linear-gradient(135deg,#e2c277,#c9a04a);color:#3a2a06}
+  .chip[data-add=ur]{background:linear-gradient(135deg,#119083,#0a6a61)}
+  .chip[data-add=ref]{background:linear-gradient(135deg,#4a86ad,#2f6485)}
+  .chip[data-add=audio]{background:linear-gradient(135deg,#d0814d,#ad5a2c)}
+  .pc[data-type=ref]{border-inline-start-color:#3d7ea6}
+  .pc[data-type=audio]{border-inline-start-color:#c0703a}
+  .pc{margin-top:20px;border-radius:20px;scroll-margin:120px 0 40px}
+  .pch{height:68px;padding:0 12px 0 18px}
+  .badge{font-size:1.5rem}
+  .ib{width:40px;height:40px}
+  .pcb{padding:20px}
+  textarea{min-height:230px;padding:16px 18px}
+  textarea.ur{font-size:1.65rem}
+  textarea.ar{font-size:1.6rem}
+  .rg{gap:14px;padding:22px}
+  .rg input{height:56px;font-size:1.1rem}
+  .drop{padding:26px 16px}
+  .dbtn{height:56px;margin-top:34px;font-size:1.2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Upar ka hara header: ek taraf naam, samne login icon -->
+<header class="bar top" id="hdr"><div class="in">
+  <span aria-hidden="true"></span>
+  <h1>المنہج الصحیح</h1>
+  <button class="rb lgn" id="lgn" type="button" aria-label="داخل ہوں" aria-expanded="false" aria-controls="lbox">
+    <svg class="usr" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg>
+    <svg class="out" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+  </button>
+</div></header>
+
+<!-- Login ka 30% transparent box -->
+<div class="lov" id="lov" hidden><div class="lbox" id="lbox" role="dialog" aria-modal="true" aria-label="داخل ہوں">
+  <div class="gfield"><input type="password" id="pw" placeholder="پاس ورڈ" autocomplete="current-password" aria-label="پاس ورڈ">
+    <button class="geye" id="geye" type="button" aria-label="پاس ورڈ دکھائیں" aria-pressed="false"><svg class="eye" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="off" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.6 5.1A10 10 0 0112 5c6.4 0 10 7 10 7a17 17 0 01-3.2 4M6.5 6.6C3.7 8.3 2 12 2 12s3.6 7 10 7a9.7 9.7 0 004.1-.9"/><path d="M9.9 9.9a3 3 0 004.2 4.2"/></svg></button></div>
+  <label class="rem"><input type="checkbox" id="rem"><span class="ck"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>پاس ورڈ یاد رکھیں</span></label>
+  <button class="gbtn" id="login" type="button">داخل ہوں</button>
+  <p class="gerr" id="gerr" role="alert"></p>
+</div></div>
+
+<!-- Sirf عنوان aur ترمیم -->
+<main class="page"><div id="list"></div><div id="sent"></div></main>
+
+<!-- Login ke baad neeche kone ka + -->
+<button class="fab" id="fab" type="button" aria-label="نیا مضمون" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="fabl">نیا مضمون</span></button>
+
+<!-- Naya screen -->
+<section class="editor" id="editor" aria-label="مضمون" hidden>
+  <header class="bar"><div class="in">
+    <button class="rb" id="back" type="button" aria-label="واپس" title="واپس (Esc)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <h2 id="etitle">نیا مضمون</h2>
+    <button class="pbtn" id="save" type="button"><span id="saveTxt">محفوظ</span></button>
+  </div></header>
+  <div class="ebody">
+    <div class="card tcard">
+      <input type="text" id="ttl" placeholder="عنوان" aria-label="عنوان" autocomplete="off">
+    </div>
+    <div id="plist"></div>
+    <div class="card cbox" id="chips" hidden>
+      <button class="chip" type="button" data-add="ur">اردو</button>
+      <button class="chip" type="button" data-add="ar">عربی</button>
+      <button class="chip" type="button" data-add="ref">حوالہ</button>
+      <button class="chip" type="button" data-add="audio">آواز</button>
+    </div>
+    <button class="dbtn" id="edel" type="button" hidden>مضمون حذف کریں</button>
+  </div>
+</section>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ====== Apps Script ka Web app link ====== */
+const API="https://script.google.com/macros/s/AKfycbxqJyt-UAIxLFcZF_ROP9UTFk23kaemzF1-VqJ1yieFtLiIRjqbhWy4NkDgYXX_llGE-A/exec";
+
+/* "حوالہ" ke khane (s = 6 column ki grid me kitni jagah) */
+const META=[
+ {k:"author",l:"مصنّف",ph:"مصنّف کا نام",s:4},
+ {k:"death",l:"وفات",ph:"وفات",s:2},
+ {k:"book",l:"کتاب",ph:"کتاب کا نام",s:6},
+ {k:"vol",l:"جلد",ph:"جلد",s:3,im:"numeric"},
+ {k:"page",l:"صفحہ",ph:"صفحہ",s:3,im:"numeric"},
+ {k:"link",l:"لنک",ph:"https://",s:6,ltr:1,im:"url"}
+];
+const KIND={ar:"عربی",ur:"اردو",ref:"حوالہ",audio:"آواز"};
+const UP='<svg viewBox="0 0 24 24"><path d="M6 14l6-6 6 6"/></svg>',
+      DN='<svg viewBox="0 0 24 24"><path d="M6 10l6 6 6-6"/></svg>',
+      X='<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+      LOCK='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>';
+const $=id=>document.getElementById(id), plist=$("plist"), ed=$("editor");
+let uid=0;
+
+/* ---------- Chhoti madad ---------- */
+let tm;
+function toast(m){const t=$("toast");t.textContent=m;t.classList.add("show");clearTimeout(tm);tm=setTimeout(()=>t.classList.remove("show"),2200)}
+/* Browser storage kabhi band hoti hai (phone ke file manager se khuli file); us surat me bhi sab chalna chahiye */
+const KEY="adminpw";
+const st={
+  get(){for(const k of["localStorage","sessionStorage"]){try{const v=window[k].getItem(KEY);if(v)return v}catch(e){}}return""},
+  saved(){try{return!!localStorage.getItem(KEY)}catch(e){return false}},
+  set(v,keep){this.del();try{(keep?localStorage:sessionStorage).setItem(KEY,v)}catch(e){}},
+  del(){for(const k of["localStorage","sessionStorage"]){try{window[k].removeItem(KEY)}catch(e){}}}
+};
+let pw="",authed=false;
+async function call(action,payload={}){
+  let r;
+  try{r=await(await fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action,password:pw,...payload})})).json()}
+  catch(e){throw new Error("net")}
+  if(r.error==="auth"){lock();throw new Error("auth")}
+  if(!r.ok)throw new Error(r.error||"server");
+  return r;
+}
+const b64=f=>new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(String(r.result).split(",")[1]);r.onerror=no;r.readAsDataURL(f)});
+
+/* ---------- Login ---------- */
+function setAuthed(v){
+  authed=v;document.body.classList.toggle("authed",v);
+  $("fab").hidden=!v;
+  const b=$("lgn");b.setAttribute("aria-label",v?"خروج":"داخل ہوں");b.title=v?"خروج":"داخل ہوں";
+}
+function lock(){pw="";st.del();setAuthed(false)}
+function openLogin(){
+  $("gerr").textContent="";$("lov").hidden=false;$("lgn").setAttribute("aria-expanded","true");
+  setTimeout(()=>$("pw").focus(),30);
+}
+function closeLogin(){$("lov").hidden=true;$("lgn").setAttribute("aria-expanded","false")}
+const MSG={auth:"پاس ورڈ غلط ہے۔ دوبارہ لکھیں۔",locked:"بہت زیادہ غلط کوششیں ہو گئیں۔ ایک منٹ بعد دوبارہ کوشش کریں۔",nopw:"پہلے Script Properties میں ADMIN_PASSWORD لگائیں۔"};
+async function login(){
+  const b=$("login"),v=$("pw").value;if(b.disabled)return;$("gerr").textContent="";
+  if(!v){$("gerr").textContent="پہلے پاس ورڈ لکھیں۔";$("pw").focus();return}
+  pw=v;b.disabled=true;b.textContent="چیک ہو رہا ہے…";
+  try{
+    await call("auth");
+    st.set(v,$("rem").checked);setAuthed(true);$("pw").value="";closeLogin();toast("خوش آمدید");
+  }catch(e){
+    if(!authed)pw="";
+    $("gerr").textContent=MSG[e.message]||"سرور سے رابطہ نہیں ہو سکا۔";
+    const g=$("lbox");g.classList.remove("shake");void g.offsetWidth;g.classList.add("shake");$("pw").select();
+  }finally{b.disabled=false;b.textContent="داخل ہوں"}
+}
+$("lgn").addEventListener("click",()=>{
+  if(authed){lock();toast("خروج ہو گیا");return}
+  $("lov").hidden?openLogin():closeLogin();
+});
+$("login").addEventListener("click",login);
+$("pw").addEventListener("keydown",e=>{if(e.key==="Enter")login()});
+$("geye").addEventListener("click",()=>{
+  const i=$("pw"),on=i.type==="password";i.type=on?"text":"password";
+  $("geye").classList.toggle("on",on);$("geye").setAttribute("aria-pressed",on);$("geye").setAttribute("aria-label",on?"پاس ورڈ چھپائیں":"پاس ورڈ دکھائیں");i.focus();
+});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("lov").hidden){closeLogin();$("lgn").focus()}});
+
+/* ---------- Unvan ki list ---------- */
+let sV="",sIdx=[],shown=0;
+function emptyBox(t,retry){
+  const d=document.createElement("div");d.className="empty";
+  d.innerHTML='<svg class="doc" viewBox="0 0 48 48" aria-hidden="true"><path d="M16 6h12l8 8v26a2 2 0 01-2 2H16a2 2 0 01-2-2V8a2 2 0 012-2z"/><path d="M28 6v8h8M19 22h12M19 28h12M19 34h7"/><path d="M8 24l-3 3 3 3M40 24l3 3-3 3"/></svg><div class="eo"><i></i><svg viewBox="0 0 24 24"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z"/></svg><i></i></div>';
+  const p=document.createElement("p");p.textContent=t;d.append(p);
+  if(retry){const b=document.createElement("button");b.type="button";b.textContent="دوبارہ کوشش کریں";b.onclick=()=>loadList();d.append(b)}
+  return d;
+}
+function rowEl(r){
+  const d=document.createElement("div"),t=document.createElement("span"),b=document.createElement("button");
+  d.className="row";t.className="t";t.textContent=r[3];
+  b.type="button";b.className="eb";b.dataset.id=r[0];b.innerHTML=LOCK+"<span>ترمیم</span>";
+  d.append(t,b);return d;
+}
+function fill(){
+  const box=$("list");
+  while(shown<sIdx.length&&$("sent").getBoundingClientRect().top<innerHeight+600){
+    const end=Math.min(shown+20,sIdx.length);
+    for(;shown<end;shown++)box.append(rowEl(sIdx[shown]));
+  }
+}
+addEventListener("scroll",fill,{passive:true});addEventListener("resize",fill);
+async function loadList(){
+  const box=$("list");
+  if(!sIdx.length){box.innerHTML="";box.append(emptyBox("لوڈ ہو رہا ہے…"))}
+  try{
+    const d=await(await fetch(API+"?action=boot&first=0&v="+encodeURIComponent(sV),{cache:"no-store"})).json();
+    if(!d.ok)throw 0;if(!d.same){sV=d.v;sIdx=d.idx}
+  }catch(e){if(!sIdx.length){box.innerHTML="";box.append(emptyBox("فہرست لوڈ نہیں ہو سکی۔",true))}return}
+  box.innerHTML="";shown=0;
+  if(!sIdx.length){box.append(emptyBox("ابھی کوئی مضمون محفوظ نہیں۔"));return}
+  fill();
+}
+async function editById(id,btn){
+  const lab=btn.querySelector("span"),old=lab.textContent;btn.disabled=true;lab.textContent="…";
+  try{
+    const d=await(await fetch(API+"?action=get&ids="+encodeURIComponent(id),{cache:"no-store"})).json();
+    if(!d.ok||!d.items.length)throw 0;startEdit(d.items[0]);
+  }catch(e){toast("مضمون کھل نہیں سکا")}
+  finally{btn.disabled=false;lab.textContent=old}
+}
+
+/* ---------- Audio ---------- */
+function audioHTML(){
+  return `<div class="audio" data-audio><input type="file" accept="audio/*,.webm" hidden data-file><audio hidden data-el preload="metadata"></audio>
+    <button class="drop" type="button" data-file-btn><span class="dico"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 15v3a3 3 0 003 3h8a3 3 0 003-3v-3"/></svg></span><span class="dt">آواز کی فائل منتخب کریں</span><span class="dh">یا فائل یہاں چھوڑ دیں — MP3، WAV، M4A</span></button>
+    <div class="player"><button class="play" type="button" data-play aria-label="آواز چلائیں"><svg class="pl" viewBox="0 0 24 24"><path d="M8 5.5v13a1 1 0 001.5.86l10.5-6.5a1 1 0 000-1.72L9.5 4.64A1 1 0 008 5.5z"/></svg><svg class="pa" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></svg></button>
+      <div class="pmid"><div class="pname"><span data-name></span><span class="psize" data-size></span></div><input class="seek" type="range" min="0" max="1000" value="0" step="1" data-seek aria-label="آواز کی پوزیشن"><div class="ptime"><span data-cur>0:00</span><span data-dur>0:00</span></div></div>
+      <div class="ptools"><button class="ib" type="button" data-file-btn aria-label="فائل تبدیل کریں"><svg viewBox="0 0 24 24"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg></button><button class="ib del" type="button" data-clear aria-label="فائل ہٹائیں">${X}</button></div></div></div>`;
+}
+const fmt=t=>{if(!isFinite(t))return"0:00";const m=Math.floor(t/60),x=Math.floor(t%60);return m+":"+String(x).padStart(2,"0")};
+const size=n=>n<1048576?Math.max(1,Math.round(n/1024))+" KB":(n/1048576).toFixed(1)+" MB";
+function revoke(a){const u=a.dataset.url;if(u){URL.revokeObjectURL(u);delete a.dataset.url}a.pause();a.removeAttribute("src");a.load()}
+function setProg(b,pct){const r=b.querySelector("[data-seek]");r.value=pct*10;r.style.setProperty("--p",pct+"%")}
+function clearAudio(b){
+  const a=b.querySelector("[data-el]");revoke(a);
+  b.querySelector("[data-file]").value="";
+  b._file=null;delete b.dataset.remote;
+  b.classList.remove("has");
+  b.querySelector("[data-play]").classList.remove("on");
+  b.querySelector("[data-cur]").textContent=b.querySelector("[data-dur]").textContent="0:00";
+  setProg(b,0);
+}
+function loadAudio(b,url,name,bytes){
+  const a=b.querySelector("[data-el]"),p=b.querySelector("[data-play]"),r=b.querySelector("[data-seek]");
+  revoke(a);
+  a.dataset.url=url;if(url)a.src=url;   /* url khali ho to awaz play dabane par Apps Script se aati hai (playRemote) */
+  b.querySelector("[data-name]").textContent=name;
+  b.querySelector("[data-size]").textContent=bytes?size(bytes):"";
+  b.classList.add("has");
+  a.onloadedmetadata=()=>b.querySelector("[data-dur]").textContent=fmt(a.duration);
+  a.ontimeupdate=()=>{b.querySelector("[data-cur]").textContent=fmt(a.currentTime);setProg(b,a.duration?a.currentTime/a.duration*100:0)};
+  a.onplay=()=>p.classList.add("on");
+  a.onpause=a.onended=()=>p.classList.remove("on");
+  r.oninput=()=>{if(a.duration)a.currentTime=r.value/1000*a.duration;r.style.setProperty("--p",r.value/10+"%")};
+  setProg(b,0);
+}
+/* Mehfooz shuda awaz: Drive ke seedhe link Google ne band kar diye hain, isliye Apps Script se mangwa kar chalate hain */
+async function playRemote(b,a){
+  const btn=b.querySelector("[data-play]");btn.disabled=true;
+  try{
+    const d=await(await fetch(API+"?action=audio&id="+encodeURIComponent(b.dataset.remote),{cache:"no-store"})).json();
+    if(!d.ok||!d.data)throw 0;
+    const u=atob(d.data),n=new Uint8Array(u.length);for(let k=0;k<u.length;k++)n[k]=u.charCodeAt(k);
+    a.dataset.url=URL.createObjectURL(new Blob([n],{type:d.mime||"audio/mpeg"}));a.src=a.dataset.url;
+    await a.play().catch(()=>{});
+  }catch(e){toast("آواز لوڈ نہیں ہو سکی")}
+  finally{btn.disabled=false}
+}
+const OK_EXT=["mp3","wav","m4a","ogg","aac","webm"];
+function pickFile(b,f){
+  if(!f)return;
+  const ext=(f.name.split(".").pop()||"").toLowerCase();
+  if(!OK_EXT.includes(ext)){toast("mp3، wav، m4a، ogg، aac یا webm فائل چنیں");return}
+  if(f.size>10*1048576){toast("فائل 10 MB سے بڑی ہے");return}
+  loadAudio(b,URL.createObjectURL(f),f.name,f.size);
+  b._file=f;delete b.dataset.remote;dirty=true;
+}
+document.addEventListener("change",e=>{
+  if(!e.target.matches("[data-file]"))return;
+  pickFile(e.target.closest("[data-audio]"),e.target.files[0]);
+});
+["dragenter","dragover"].forEach(ev=>document.addEventListener(ev,e=>{const b=e.target.closest&&e.target.closest("[data-audio]");if(b){e.preventDefault();b.classList.add("over")}}));
+["dragleave","drop"].forEach(ev=>document.addEventListener(ev,e=>{const b=e.target.closest&&e.target.closest("[data-audio]");if(b){e.preventDefault();b.classList.remove("over");if(ev==="drop")pickFile(b,e.dataTransfer.files[0])}}));
+
+/* ---------- Naya screen ---------- */
+let editing=null,dirty=false,edOpen=false;
+function metaField(m,id){
+  return`<input id="${id}" data-k="${m.k}" type="text" style="grid-column:span ${m.s}" placeholder="${m.ph}" aria-label="${m.l}" autocomplete="off"${m.ltr?' dir="ltr"':""}${m.im?` inputmode="${m.im}"`:""}>`;
+}
+function makeCard(type){
+  const c=document.createElement("section"),n=++uid,lbl=KIND[type];
+  c.className="card pc";c.dataset.type=type;
+  const body=type==="ref"
+    ?`<div class="rg">${META.map(m=>metaField(m,"m"+n+m.k)).join("")}</div>`
+    :type==="audio"?`<div class="pcb">${audioHTML()}</div>`
+    :`<div class="pcb"><textarea class="${type}" lang="${type==="ar"?"ar":"ur"}" dir="rtl" aria-label="${lbl} عبارت" placeholder="${lbl} عبارت یہاں لکھیں"></textarea></div>`;
+  c.innerHTML=`<div class="pch"><span class="badge">${lbl}</span><div class="tools">
+      <button class="ib" type="button" data-up aria-label="اوپر منتقل کریں" title="اوپر">${UP}</button>
+      <button class="ib" type="button" data-down aria-label="نیچے منتقل کریں" title="نیچے">${DN}</button>
+      <button class="ib del" type="button" data-del aria-label="حذف کریں" title="حذف کریں">${X}</button></div></div>`+body;
+  return c;
+}
+const fit=ta=>{ta.style.height="auto";ta.style.height=Math.max(170,ta.scrollHeight+4)+"px"};
+function refresh(){
+  const cs=[...plist.children];
+  cs.forEach((c,i)=>{c.querySelector("[data-up]").disabled=i===0;c.querySelector("[data-down]").disabled=i===cs.length-1});
+}
+function setTitleState(){$("chips").hidden=!$("ttl").value.trim().length}
+function hasContent(c){
+  if(c.dataset.type==="audio")return c.querySelector("[data-audio]").classList.contains("has");
+  if(c.dataset.type!=="ref")return!!c.querySelector("textarea").value.trim();
+  return[...c.querySelectorAll("input[data-k]")].some(i=>i.value.trim());
+}
+function addItem(type,vals){
+  const c=makeCard(type);plist.append(c);refresh();
+  if(vals){
+    if(type==="ref"){
+      for(const m of META){
+        const v=vals.meta&&vals.meta[m.k];if(v)c.querySelector(`[data-k="${m.k}"]`).value=v;
+      }
+    }else if(type==="audio"){
+      const b=c.querySelector("[data-audio]");loadAudio(b,"","محفوظ شدہ آڈیو",0);b.dataset.remote=vals.v;
+    }else{const ta=c.querySelector("textarea");ta.value=vals.text||"";fit(ta)}
+  }else{
+    dirty=true;
+    const f=c.querySelector("textarea,input[data-k]");if(f)f.focus({preventScroll:true});
+    reveal(c);
+  }
+  return c;
+}
+/* Naya box khulne par 3 button hamesha uske neeche, aur screen upar scroll hoti hai taake keyboard ke peeche na chupen */
+const DESK=matchMedia("(min-width:900px)");
+function reveal(c){
+  requestAnimationFrame(()=>{
+    if(!edOpen)return;
+    if(DESK.matches){if(c)c.scrollIntoView({block:"nearest",behavior:"smooth"});return}   /* desktop: button sidebar me hain, bas naya box nazar aaye */
+    const bx=$("chips");
+    if(c&&c.dataset.type==="ref"){c.scrollIntoView({block:"start",behavior:"smooth"});return}
+    if(!c){if(plist.children.length)return}
+    else if(c!==plist.lastElementChild){c.scrollIntoView({block:"nearest",behavior:"smooth"});return}
+    if(!bx.hidden)bx.scrollIntoView({block:"end",behavior:"smooth"});
+  });
+}
+/* Mobile keyboard: screen ki unchai keyboard se upar tak ghata dete hain, taake neeche ka hissa scroll ho sake */
+function fitKeyboard(doReveal){
+  const vv=window.visualViewport;if(!vv)return;
+  const h=Math.max(0,Math.round(innerHeight-vv.height-vv.offsetTop));
+  ed.style.bottom=h+"px";$("lov").style.bottom=h+"px";
+  if(!doReveal||!h||!edOpen)return;
+  const a=document.activeElement;if(!a||!ed.contains(a))return;
+  reveal(a.closest(".pc"));
+}
+if(window.visualViewport){visualViewport.addEventListener("resize",()=>fitKeyboard(true));visualViewport.addEventListener("scroll",()=>fitKeyboard(false))}
+$("chips").addEventListener("mousedown",e=>e.preventDefault());
+function resetEditor(){
+  plist.querySelectorAll("[data-el]").forEach(revoke);
+  plist.innerHTML="";$("ttl").value="";editing=null;dirty=false;
+  const d=$("edel");d.classList.remove("sure");d.textContent="مضمون حذف کریں";clearTimeout(dtm);
+}
+function openEditor(id){
+  resetEditor();editing=id||null;
+  $("etitle").textContent=id?"مضمون میں ترمیم":"نیا مضمون";
+  $("edel").hidden=!id;$("saveTxt").textContent=id?"اپڈیٹ":"محفوظ";
+  edOpen=true;ed.hidden=false;ed.scrollTop=0;document.documentElement.style.overflow="hidden";
+  setTitleState();
+  try{history.pushState({ed:1},"")}catch(e){}
+}
+function closeEditor(fromPop){
+  if(!edOpen)return;
+  edOpen=false;ed.hidden=true;resetEditor();document.documentElement.style.overflow="";
+  if(!fromPop){try{if(history.state&&history.state.ed)history.back()}catch(e){}}
+}
+function tryClose(){if(dirty&&!confirm("تبدیلیاں محفوظ نہیں ہوئیں۔ پھر بھی بند کریں؟"))return;dirty=false;closeEditor()}
+addEventListener("popstate",()=>{
+  if(!edOpen)return;
+  if(dirty&&!confirm("تبدیلیاں محفوظ نہیں ہوئیں۔ پھر بھی بند کریں؟")){try{history.pushState({ed:1},"")}catch(e){}return}
+  dirty=false;closeEditor(true);
+});
+$("back").addEventListener("click",tryClose);
+$("fab").addEventListener("click",()=>{openEditor();setTimeout(()=>$("ttl").focus({preventScroll:true}),60)});
+$("ttl").addEventListener("input",setTitleState);
+ed.addEventListener("input",e=>{const t=e.target;if(!t.matches("textarea,input[type=text]"))return;dirty=true;if(t.tagName==="TEXTAREA")fit(t)});   /* آڈیو سلائیڈر ہلانے سے "تبدیلی" نہیں گنی جاتی */
+
+/* Block list ko cards me todna: عبارت = ek card, آواز = ek card, lagatar حوالہ ke khane = ek حوالہ card */
+function parseBlocks(blocks){
+  let title="",cur=null;const items=[];
+  for(const x of blocks){
+    if(x.k==="title"){if(!title)title=x.v;continue}
+    if(x.k==="ar"||x.k==="ur"){items.push({type:x.k,text:x.v});cur=null;continue}
+    if(x.k==="audio"){items.push({type:"audio",v:x.v});cur=null;continue}
+    if(META.some(m=>m.k===x.k)){
+      if(!cur||cur.meta[x.k]!==undefined){cur={type:"ref",meta:{}};items.push(cur)}
+      cur.meta[x.k]=x.v;
+    }
+  }
+  return{title,items};
+}
+function startEdit(a){
+  if(!authed){toast("ترمیم کے لیے پہلے داخل ہوں");openLogin();return}
+  const {title,items}=parseBlocks(a.blocks||[]);
+  openEditor(a.id);
+  $("ttl").value=title;setTitleState();
+  items.forEach(p=>addItem(p.type,p));
+  dirty=false;
+}
+/* Save: [title, phir cards jis tarteeb se hain: عبارت ya حوالہ ke khane] */
+async function collect(){
+  const title=$("ttl").value.trim();
+  if(!title){toast("پہلے عنوان لکھیں");$("ttl").focus();return null}
+  const out=[{k:"title",v:title}];
+  for(const c of plist.children){
+    if(c.dataset.type==="audio"){
+      const b=c.querySelector("[data-audio]");if(!b.classList.contains("has"))continue;
+      let u=b.dataset.remote||"";
+      if(b._file){toast("آڈیو اپلوڈ ہو رہی ہے، انتظار کریں…");u=(await call("upload",{name:b._file.name,data:await b64(b._file)})).id;b.dataset.remote=u;b._file=null}   /* محفوظ ناکام ہو کر دوبارہ دبانے پر وہی فائل دوبارہ اپلوڈ نہ ہو */
+      if(u)out.push({k:"audio",v:u});continue;
+    }
+    if(c.dataset.type!=="ref"){
+      const text=c.querySelector("textarea").value.trim();if(text)out.push({k:c.dataset.type,v:text});continue;
+    }
+    for(const m of META){
+      const v=c.querySelector(`[data-k="${m.k}"]`).value.trim();if(v)out.push({k:m.k,v});
+    }
+  }
+  return out;
+}
+function failMsg(e){
+  if(e.message==="auth"){toast("پاس ورڈ کا سیشن ختم ہو گیا، دوبارہ داخل ہوں");openLogin();return}
+  return e.message==="toolong"?"مضمون بہت لمبا ہے، کچھ حصہ کم کریں":e.message==="size"?"آڈیو 10 MB سے بڑی ہے":null;
+}
+$("save").addEventListener("click",async()=>{
+  const btn=$("save"),tx=$("saveTxt"),old=tx.textContent;btn.disabled=true;tx.textContent="…";
+  try{
+    const blocks=await collect();if(!blocks)return;
+    await call("save",{id:editing||undefined,blocks});
+    toast("مضمون محفوظ ہو گیا");dirty=false;closeEditor();loadList();
+  }catch(e){const m=failMsg(e);if(m!==undefined)toast(m||"محفوظ نہیں ہو سکا۔ دوبارہ کوشش کریں")}
+  finally{btn.disabled=false;tx.textContent=old}
+});
+let dtm;
+$("edel").addEventListener("click",async()=>{
+  const b=$("edel");
+  if(!b.classList.contains("sure")){b.classList.add("sure");b.textContent="پکا حذف کریں؟";dtm=setTimeout(()=>{b.classList.remove("sure");b.textContent="مضمون حذف کریں"},3000);return}
+  clearTimeout(dtm);
+  try{await call("delete",{id:editing});toast("مضمون حذف ہو گیا");dirty=false;closeEditor();loadList()}
+  catch(e){const m=failMsg(e);if(m!==undefined)toast("حذف نہیں ہو سکا")}
+});
+
+/* Desktop shortcut: Ctrl/Cmd+S = محفوظ/اپڈیٹ, Esc = واپس */
+document.addEventListener("keydown",e=>{
+  if(!edOpen||!$("lov").hidden)return;
+  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="s"){e.preventDefault();if(!$("save").disabled)$("save").click()}
+  else if(e.key==="Escape")tryClose();
+});
+
+/* ---------- Click handler ---------- */
+document.addEventListener("click",e=>{
+  const t=e.target;
+  if(t===$("lov")){closeLogin();return}
+  const eb=t.closest(".eb");
+  if(eb){
+    if(!authed){toast("ترمیم کے لیے پہلے داخل ہوں");openLogin();return}
+    editById(eb.dataset.id,eb);return;
+  }
+  const add=t.closest("[data-add]");
+  if(add){addItem(add.dataset.add);return}
+  const c=t.closest(".pc");if(!c)return;
+  if(t.closest("[data-up],[data-down]")){
+    const up=!!t.closest("[data-up]"),s=up?c.previousElementSibling:c.nextElementSibling;
+    if(!s)return;up?s.before(c):s.after(c);refresh();dirty=true;
+    c.scrollIntoView({behavior:"smooth",block:"nearest"});return;
+  }
+  if(t.closest("[data-del]")){
+    if(hasContent(c)&&!confirm("اسے حذف کریں؟"))return;
+    c.querySelectorAll("[data-el]").forEach(revoke);c.remove();refresh();dirty=true;return;
+  }
+  if(t.closest("[data-file-btn]")){c.querySelector("[data-file]").click();return}
+  if(t.closest("[data-clear]")){clearAudio(c.querySelector("[data-audio]"));dirty=true;return}
+  if(t.closest("[data-play]")){
+    const b=c.querySelector("[data-audio]"),a=c.querySelector("[data-el]");
+    if(!a.paused)a.pause();else if(!a.getAttribute("src")&&b.dataset.remote)playRemote(b,a);else a.play();
+  }
+});
+
+/* ---------- Shuru ---------- */
+setAuthed(false);
+loadList();
+const sp=st.get();
+if(sp){
+  pw=sp;$("rem").checked=st.saved();
+  call("auth").then(()=>setAuthed(true)).catch(()=>{pw=""});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>المنہج الصحیح</title>
+<meta name="description" content="المنہج الصحیح: حوالہ جات کے ساتھ مستند مضامین">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mirza:wght@700&family=Noto+Naskh+Arabic:wght@600&family=Noto+Nastaliq+Urdu:wght@400&family=Amiri+Quran&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://script.google.com" crossorigin>
+<link rel="preconnect" href="https://script.googleusercontent.com" crossorigin>
+<style>
+@font-face{font-family:"Jameel Noori Nastaleeq";src:url("JameelNoori.woff2") format("woff2");font-display:swap}
+@font-face{font-family:"Muhammadi Quranic";src:url("MuhammadiQuranic.woff2") format("woff2");font-display:swap}
+:root{--bg:#f4faf8;--card:#fff;--line:#e4e6d2;--text:#17302d;--muted:#6b8480;--teal:#0b7a70;--soft:#e3f4f0;--gold:#d6b264;--ar:#0b3f3a;--head:#064b47;--tbg:linear-gradient(#fffbf1,#f6ecd5);--tbd:#dcc27c;--arbg:linear-gradient(#eaf5f1,#fbfcf8);--hh:60px;--sh:0 1px 2px rgba(6,75,71,.05),0 10px 26px rgba(6,75,71,.08);--fa:"Muhammadi Quranic","Amiri Quran","Noto Naskh Arabic",serif;--fu:"Jameel Noori Nastaleeq","Noto Nastaliq Urdu",serif;box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root{--bg:#061a18;--card:#0d2a27;--line:#2a4a3f;--text:#e3f1ee;--muted:#8fb0aa;--teal:#4fd1c0;--soft:#103633;--ar:#f1faf8;--head:#fff;--tbg:linear-gradient(#173a36,#12302d);--tbd:#8a7440;--arbg:linear-gradient(#0f2f2c,#0d2a27);--sh:0 1px 2px rgba(0,0,0,.3),0 10px 26px rgba(0,0,0,.28)}}
+*{box-sizing:border-box;font-weight:400}
+html{background:var(--bg)}
+html,body{margin:0}
+body{color:var(--text);font-family:var(--fu),"Segoe UI",serif;font-size:1.1rem;line-height:2.1}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23cfe6df' stroke-width='.9'%3E%3Crect x='18' y='18' width='64' height='64'/%3E%3Crect x='18' y='18' width='64' height='64' transform='rotate%2845 50 50%29'/%3E%3Ccircle cx='50' cy='50' r='15'/%3E%3C/svg%3E") no-repeat right -60px top 46vh/200px,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23cfe6df' stroke-width='.9'%3E%3Crect x='18' y='18' width='64' height='64'/%3E%3Crect x='18' y='18' width='64' height='64' transform='rotate%2845 50 50%29'/%3E%3Ccircle cx='50' cy='50' r='15'/%3E%3C/svg%3E") no-repeat left -70px bottom 9vh/220px,linear-gradient(#f2f9f6,#fafdfc 50%,#f1f8f6)}
+@media (prefers-color-scheme:dark){body::before{background:linear-gradient(#061a18,#071f1d 50%,#061a18)}}
+button,input{font:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+
+/* Patla header: sirf naam */
+.bar{position:sticky;top:0;z-index:30;color:#f6e3ae;text-align:center;padding:env(safe-area-inset-top,0px) 18px 0;border-radius:0 0 22px 22px;border-bottom:2px solid rgba(214,178,100,.9);box-shadow:0 8px 20px rgba(6,75,71,.25);
+ background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 6v88M6 50h88M19 19l62 62M81 19L19 81' stroke='%23fff' stroke-opacity='.13' stroke-width='10' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat left -22px center/72px,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 6v88M6 50h88M19 19l62 62M81 19L19 81' stroke='%23fff' stroke-opacity='.13' stroke-width='10' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right -22px center/72px,linear-gradient(165deg,#0d7a70,#064b47 58%,#053f3c)}
+.bar h1{margin:0;min-height:64px;padding:6px 0 4px;display:flex;align-items:center;justify-content:center;font:700 clamp(1.7rem,7.5vw,2.2rem)/1.7 "Mirza","Noto Naskh Arabic","Amiri Quran",serif;text-shadow:0 2px 10px rgba(0,0,0,.3);white-space:nowrap}
+
+.wrap{max-width:760px;margin:0 auto;padding:0 14px 48px}
+.find{position:sticky;top:var(--hh);z-index:5;padding:14px 0 10px;transition:background .2s}
+.find.stuck{background:rgba(244,250,248,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+@media (prefers-color-scheme:dark){.find.stuck{background:rgba(6,26,24,.8)}}
+.find input{display:block;width:100%;height:56px;border:2.5px solid var(--gold);border-radius:30px;background:var(--card);color:var(--text);padding:0 24px;font-size:1.2rem;box-shadow:var(--sh);font-family:inherit;-webkit-appearance:none;appearance:none;transition:.2s}
+.find input::placeholder{color:var(--muted)}
+.find input::-webkit-search-cancel-button{-webkit-appearance:none}
+.find input:focus{outline:none;box-shadow:0 0 0 4px rgba(214,178,100,.28),var(--sh)}
+.cnt{margin:0 6px 8px;color:var(--muted);font-size:1.05rem;line-height:1.9}.cnt:empty{display:none}
+
+/* Mazmoon ka card */
+.card{background:var(--card);border:1px solid var(--line);border-radius:26px;box-shadow:var(--sh);padding:10px;margin-bottom:18px}
+.ht,.ph h2{display:flex;align-items:center;justify-content:center;width:100%;min-height:58px;margin:0;padding:2px 16px;border:1px solid var(--tbd);border-radius:20px;background:var(--tbg);color:var(--head);font:400 1.65rem/2 var(--fu);text-align:center}
+.card h2{margin:0}
+.ht{cursor:pointer}
+.ht:active{filter:brightness(.97)}
+.card>.aud{margin:10px 0 0;padding:14px 16px 8px;border:1px solid rgba(214,178,100,.8);border-radius:22px;color:#f6e3ae;box-shadow:0 6px 16px rgba(6,75,71,.22);background:radial-gradient(circle at 12% 130%,rgba(255,255,255,.09) 0 90px,transparent 91px),linear-gradient(165deg,#0d7a70,#064b47 62%,#053f3c)}
+.sk{-webkit-appearance:none;appearance:none;display:block;width:100%;height:22px;margin:0;padding:0;border:0;background:none;cursor:pointer;--p:0%}
+.sk::-webkit-slider-runnable-track{height:6px;border-radius:6px;background:linear-gradient(to left,#e8c77f var(--p),rgba(255,255,255,.25) var(--p))}
+.sk::-moz-range-track{height:6px;border-radius:6px;background:rgba(255,255,255,.25)}
+.sk::-moz-range-progress{height:6px;border-radius:6px;background:#e8c77f}
+.sk::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#fff3d2;border:3px solid #d6b264;margin-top:-6px}
+.sk::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:#fff3d2;border:3px solid #d6b264}
+.ctl{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;margin-top:4px}
+.ctl .t{font:.9rem/1.4 system-ui,sans-serif;font-variant-numeric:tabular-nums;direction:ltr;color:rgba(255,255,255,.88)}
+.ctl .t:first-child{justify-self:start}.ctl .t:last-child{justify-self:end}
+.mc{display:flex;align-items:center;gap:16px}
+.pl{position:relative;width:58px;height:58px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);background:linear-gradient(#ecc982,#d6b264);color:#053f3c;display:grid;place-items:center;padding:0;cursor:pointer;box-shadow:0 6px 14px rgba(0,0,0,.28);transition:filter .2s,transform .15s}
+.pl:hover{filter:brightness(1.06)}.pl:active{transform:scale(.95)}
+.pl svg{width:26px;height:26px;fill:currentColor}.pl .pa{display:none}.pl.on .pp{display:none}.pl.on .pa{display:block}
+.pl.ld svg{display:none!important}
+.pl.ld::after{content:"";width:24px;height:24px;border:3px solid rgba(5,63,60,.25);border-top-color:#053f3c;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sg{width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;padding:0;cursor:pointer;transition:background .2s}
+.sg:hover{background:rgba(255,255,255,.22)}.sg:active{transform:scale(.94)}
+.sg svg{width:28px;height:28px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sg text{fill:currentColor;stroke:none;font:700 7.5px system-ui,sans-serif}
+.aud .fb{color:#f6e3ae}
+.aud small{display:block;color:rgba(255,255,255,.7);font:.8rem system-ui,sans-serif}
+.fb{display:block;color:var(--teal);text-decoration:none;padding:6px 4px;font-size:1.05rem}
+/* Band hone par 2 line ki jhalak, kholne par poora mazmoon */
+.pre{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;width:100%;margin:6px 0 0;padding:4px 12px 6px;border:0;background:none;color:var(--text);text-align:start;font:400 1.3rem/2.3 var(--fu);cursor:pointer}
+.pre[data-k=ar]{font:400 1.5rem/2.4 var(--fa);color:var(--ar);word-spacing:.15em}
+.card.open .pre,.card:not(.open) .body{display:none}
+.seg{margin-top:12px}
+.seg.ar{padding:8px 16px 12px;background:var(--arbg);border-inline-start:3px solid var(--gold);border-start-start-radius:24px;border-end-start-radius:24px}
+.seg.ur{padding:0 8px}
+.seg .tx{margin:0;word-spacing:.15em}
+.seg.ar .tx{font:400 1.8rem/2.6 var(--fa);word-spacing:.18em;color:var(--ar);padding-top:4px}
+.seg.ur .tx{font-size:1.4rem;line-height:2.4}
+.rf{position:relative;margin-top:8px;padding-top:6px;border-top:1px solid rgba(214,178,100,.8)}
+.seg.ur .rf{border-top-style:dashed}
+.rt{color:var(--muted);font-size:1.05rem;line-height:2.1}
+.rt>div{text-wrap:balance}
+.l1{width:fit-content;min-width:50%;max-width:100%;margin-inline-start:auto}
+.lr{display:flex;align-items:center;gap:8px}
+.lr .l2{flex:1;min-width:0}
+.lr>.bk{margin-inline-start:auto;transform:translateY(5px)}
+.rt .l1{color:var(--text)}
+.fa{font-family:var(--fa);font-size:1.12em}.fu{font-family:var(--fu)}
+.bk{flex-shrink:0;width:34px;height:34px;border-radius:50%;border:1.5px solid #86c8bd;background:var(--soft);color:var(--head);display:grid;place-items:center;transition:.2s}
+.bk:hover{border-color:var(--teal)}
+.bk svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ph .bar{height:14px;margin:14px 12px;border-radius:8px;background:linear-gradient(90deg,var(--line),var(--soft),var(--line));background-size:200% 100%;animation:sh 1.2s linear infinite}
+.ph .bar:empty~.bar{width:60%}
+.ph div:not(.bar),.ph .bar:not(:empty){height:auto;background:none;animation:none;color:var(--muted);padding:6px 12px;margin:0}
+@keyframes sh{to{background-position:-200% 0}}
+.more{display:block;margin:6px auto 0;height:48px;padding:0 30px;border:1.5px solid #86c8bd;border-radius:24px;background:var(--soft);color:var(--head);font-size:1.1rem;cursor:pointer}
+.more:hover{border-color:var(--teal)}.more[hidden]{display:none}
+.none{text-align:center;color:var(--muted);padding:10px 0 30px;font-size:1.3rem}
+.none:not(:empty)::before{content:"";display:block;width:84px;height:84px;margin:30px auto 10px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23bcd9d3' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 6h12l8 8v26a2 2 0 01-2 2H16a2 2 0 01-2-2V8a2 2 0 012-2z'/%3E%3Cpath d='M28 6v8h8M19 22h12M19 28h12M19 34h7'/%3E%3C/svg%3E") center/contain no-repeat}
+.orn{display:flex;align-items:center;justify-content:center}
+.orn i{display:block;width:70px;height:1.5px;background:linear-gradient(90deg,transparent,var(--gold))}
+.orn i:last-child{background:linear-gradient(270deg,transparent,var(--gold))}
+.orn svg{width:16px;height:16px;margin:0 2px;fill:#e8c77f}
+footer{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--muted);font-size:1.15rem;padding:26px 0 0}
+footer small{font-size:1rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.ph .bar{animation:none}}
+@media (min-width:900px){
+  .bar{border-radius:0 0 32px 32px;padding-left:40px;padding-right:40px}
+  .bar h1{min-height:76px;font-size:2.6rem}
+  .wrap{width:min(1500px,calc(100% - 80px));max-width:none;padding:0 0 64px}
+  .find input{max-width:860px;margin-inline:auto;height:62px;font-size:1.3rem}
+  .cnt{max-width:860px;margin:0 auto 8px;padding:0 6px}
+  .card{padding:16px;border-radius:30px;margin-bottom:22px}
+  .ht,.ph h2{min-height:72px;font-size:2.1rem}
+  .card>.aud{max-width:760px;margin:14px auto 0}
+  .pre{padding:6px 18px 8px;font-size:1.55rem}.pre[data-k=ar]{font-size:1.85rem}
+  .seg.ar{padding:12px 28px 16px}.seg.ur{padding:0 14px}
+  .seg.ar .tx{font-size:2.2rem}.seg.ur .tx{font-size:1.75rem}
+  .rt{font-size:1.25rem}
+}
+
+</style>
+</head>
+<body>
+<header class="bar" id="hdr"><h1>المنہج الصحیح</h1></header>
+<main class="wrap">
+  <div id="sent" style="height:1px;margin-bottom:-1px"></div>
+  <div class="find" id="find"><input id="q" type="search" placeholder="عنوان، عبارت یا مصنّف تلاش کریں" aria-label="تلاش"></div>
+  <p class="cnt" id="cnt" aria-live="polite"></p>
+  <div id="list"></div>
+  <p class="none" id="none" hidden></p>
+  <button class="more" id="more" type="button" hidden>مزید مضامین دکھائیں</button>
+  <footer><div class="orn"><i></i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z"/></svg><i></i></div>المنہج الصحیح<small>حوالہ جات کے ساتھ مستند مضامین</small></footer>
+</main>
+<script>
+/* ====== Apps Script Web app ka link (Code.gs wala, https://script.google.com/macros/s/.../exec) ====== */
+const API="https://script.google.com/macros/s/AKfycbxqJyt-UAIxLFcZF_ROP9UTFk23kaemzF1-VqJ1yieFtLiIRjqbhWy4NkDgYXX_llGE-A/exec";
+const $=id=>document.getElementById(id),list=$("list");
+const el=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e};
+const fmt=t=>isFinite(t)?Math.floor(t/60)+":"+String(Math.floor(t%60)).padStart(2,"0"):"0:00";
+const PL='<svg class="pp" viewBox="0 0 24 24"><path d="M8 5.5v13a1 1 0 001.5.86l10.5-6.5a1 1 0 000-1.72L9.5 4.64A1 1 0 008 5.5z"/></svg><svg class="pa" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></svg>';
+const RW='<svg viewBox="0 0 24 24"><path d="M5 12a7 7 0 107-7H8"/><path d="M10.5 2.5L7.5 5l3 2.5"/><text x="12" y="15.6" text-anchor="middle">10</text></svg>',
+      FW='<svg viewBox="0 0 24 24"><path d="M19 12a7 7 0 11-7-7h4"/><path d="M13.5 2.5L16.5 5l-3 2.5"/><text x="12" y="15.6" text-anchor="middle">10</text></svg>';
+let skipDrive=false;   /* ek baar Drive ke seedhe link fail ho jayen to baqi awazen seedha Apps Script se aati hain */
+function player(id,title){
+  const box=el("div","aud"),a=new Audio(),b=el("button","pl"),cur=el("span","t","0:00"),dur=el("span","t","0:00"),r=el("input","sk"),ctl=el("div","ctl"),mc=el("div","mc");
+  /* Awaz ke raste: pehle Drive ke seedhe link (Google bahar ki sites par aksar band kar deta hai), phir Apps Script se (ye hamesha chalta hai).
+     Ek na chale ya 12 sec atke to agla khud lagta hai, sab fail hon to Drive ka link dikhta hai */
+  const S=["https://drive.usercontent.google.com/download?id="+id+"&export=download&confirm=t","https://drive.google.com/uc?export=download&id="+id];
+  let i=-1,pend=null,tm=0;
+  const go=()=>{const p=a.play();if(p&&p.catch)p.catch(e=>{if(e&&e.name==="NotAllowedError")b.classList.remove("ld")})};
+  const fail=()=>{clearTimeout(tm);const c=a.error?a.error.code:0,l=el("a","fb","آواز یہاں نہیں چل سکی۔ گوگل ڈرائیو میں سنیں");l.href="https://drive.google.com/file/d/"+id+"/view";l.target="_blank";l.rel="noopener noreferrer";box.replaceChildren(l,el("small","","کوڈ: "+c))};
+  const viaScript=async()=>{
+    b.classList.add("ld");
+    try{
+      const d=await(await fetch(API+"?action=audio&id="+encodeURIComponent(id),{cache:"no-store"})).json();
+      if(!d.ok||!d.data)throw 0;
+      if(a.readyState>=2)return;   /* is dauran Drive wala link chal pada to use na chheden */
+      const u=atob(d.data),n=new Uint8Array(u.length);for(let k=0;k<u.length;k++)n[k]=u.charCodeAt(k);
+      a.src=URL.createObjectURL(new Blob([n],{type:d.mime||"audio/mpeg"}));go();
+    }catch(e){fail()}
+  };
+  const next=()=>{
+    clearTimeout(tm);++i;
+    if(i<S.length){a.src=S[i];b.classList.add("ld");tm=setTimeout(()=>{if(a.readyState<2)next()},12000);go();return}
+    skipDrive=true;
+    if(i===S.length)viaScript();else fail();
+  };
+  const ensure=()=>{if(i<0){if(skipDrive)i=S.length-1;next()}};
+  const prog=p=>{r.value=p*10;r.style.setProperty("--p",p+"%")};
+  const sg=(txt,d,svg)=>{const x=el("button","sg");x.type="button";x.innerHTML=svg;x.setAttribute("aria-label",txt);x.onclick=()=>{ensure();try{const t=(a.currentTime||0)+d;a.currentTime=Math.max(0,a.duration?Math.min(a.duration,t):t)}catch(e){}};return x};
+  a.preload="none";b.type="button";b.innerHTML=PL;b.setAttribute("aria-label","آواز چلائیں: "+title);
+  Object.assign(r,{type:"range",min:0,max:1000,value:0});r.setAttribute("aria-label","آواز کی پوزیشن");
+  mc.append(sg("10 سیکنڈ پیچھے",-10,RW),b,sg("10 سیکنڈ آگے",10,FW));ctl.append(cur,mc,dur);box.append(r,ctl);
+  b.onclick=()=>{if(!a.paused){a.pause();return}document.querySelectorAll("audio").forEach(x=>x.pause());ensure();b.classList.add("ld");go()};
+  a.onplaying=()=>{b.classList.remove("ld");b.classList.add("on")};
+  a.onpause=a.onended=()=>b.classList.remove("on","ld");
+  a.onwaiting=()=>b.classList.add("ld");a.oncanplay=()=>{clearTimeout(tm);b.classList.remove("ld")};
+  a.onloadedmetadata=()=>{dur.textContent=fmt(a.duration);if(pend!=null&&a.duration){a.currentTime=pend*a.duration;pend=null}};
+  a.ontimeupdate=()=>{cur.textContent=fmt(a.currentTime);prog(a.duration?a.currentTime/a.duration*100:0)};
+  r.oninput=()=>{ensure();if(a.duration)a.currentTime=r.value/1000*a.duration;else pend=r.value/1000;r.style.setProperty("--p",r.value/10+"%")};
+  a.onerror=()=>{if(i>=0)next()};
+  document.body.append(a);
+  return box;
+}
+const REF=new Set(["author","death","book","vol","page","link"]);
+/* Ibarat (عربی/اردو) + uske neeche ka حوالہ ek hi hisse me; har likhat apni zaban ke font me */
+const BK='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7c-1.5-1.3-3.6-2-6-2H3v13h3c2.4 0 4.5.7 6 2 1.5-1.3 3.6-2 6-2h3V5h-3c-2.4 0-4.5.7-6 2z"/><path d="M12 7v13"/></svg>';
+const lg=s=>{const u=(s.match(/[\u06C1\u06CC\u06D2\u06A9\u06BA\u0679\u0688\u0691\u06AF\u0686\u067E\u0698\u06BE\u06C3]/g)||[]).length,a=(s.match(/[\u064A\u0643\u0629\u0649\u0647\u064B-\u0652\u0623\u0625]/g)||[]).length;return a>u?"fa":"fu"};
+const fld=(t,c)=>{const e=el("span",c||lg(t),t);return e};
+function refs(g){
+  const ms=[];let m=null;
+  g.forEach(x=>{if(!m||m[x.k]!==undefined){m={};ms.push(m)}m[x.k]=x.v});
+  return ms.map(m=>{
+    const d=el("div","rf"),t=el("div","rt"),lr=el("div","lr");
+    if(m.author||m.death){const l=el("div","l1");if(m.author)l.append(fld(m.author));if(m.death)l.append(" ",fld("(وفات: "+m.death+")","fu"));t.append(l)}
+    const nums=[];if(m.vol)nums.push("جلد "+m.vol);if(m.page)nums.push("صفحہ "+m.page);
+    if(m.book||nums.length){const l=el("div","l2");if(m.book)l.append(fld(m.book));if(nums.length)l.append(m.book?"، ":"",fld(nums.join("، "),"fu"));lr.append(l)}
+    if(/^https?:\/\//i.test(m.link||"")){const a=el("a","bk");a.href=m.link;a.target="_blank";a.rel="noopener noreferrer";a.title=a.ariaLabel="کتاب کھولیں";a.innerHTML=BK;lr.append(a)}
+    if(lr.children.length)t.append(lr);
+    d.append(t);
+    return t.children.length?d:null;
+  }).filter(Boolean);
+}
+function card(x){
+  const c=el("article","card"),title=(x.blocks.find(b=>b.k==="title")||{}).v||"",segs=[],auds=[];let g=[];
+  const flush=()=>{if(!g.length)return;const rs=refs(g);g=[];const s=segs[segs.length-1];if(s)s.refs.push(...rs);else segs.push({k:"ref",refs:rs})};
+  x.blocks.forEach(b=>{
+    if(REF.has(b.k))g.push(b);
+    else if(b.k==="ar"||b.k==="ur"){flush();segs.push({k:b.k,t:b.v,refs:[]})}
+    else if(b.k==="audio"&&/^[A-Za-z0-9_-]{20,80}$/.test(b.v))auds.push(player(b.v,title));
+  });
+  flush();
+  const h=el("h2"),bt=el("button","ht",title);bt.type="button";h.append(bt);c.append(h);
+  auds.forEach(a=>c.append(a));
+  const body=el("div","body");
+  segs.forEach(s=>{
+    const d=el("div","seg "+s.k);
+    if(s.t){const p=el("p","tx",s.t);if(s.k==="ar")p.lang="ar";d.append(p)}
+    s.refs.forEach(r=>d.append(r));body.append(d);
+  });
+  const first=segs.find(s=>s.t);
+  if(first){
+    const pre=el("button","pre",first.t);pre.type="button";pre.dataset.k=first.k;bt.setAttribute("aria-expanded","false");
+    bt.onclick=pre.onclick=()=>bt.setAttribute("aria-expanded",c.classList.toggle("open"));
+    c.append(pre,body);
+  }else{c.classList.add("open");c.append(body)}
+  return c;
+}
+/* تلاش کا متن یکساں کرنا: یہی Code.gs کے norm_ جیسا ہے، دونوں برابر رکھیں */
+const norm=s=>String(s).normalize("NFKC").toLowerCase().replace(/[\u064B-\u065F\u0670\u06D6-\u06ED\u0640\u200c\u200d]/g,"").replace(/[٠-٩۰-۹]/g,c=>String(c.charCodeAt(0)&15)).replace(/[أإآٱ]/g,"ا").replace(/[يىېئ]/g,"ی").replace(/ك/g,"ک").replace(/[ةھۃه]/g,"ہ").replace(/ؤ/g,"و").replace(/\s+/g," ").trim();
+/* براؤزر کی یادداشت (IndexedDB): فہرست اور پڑھے ہوئے مضامین، تاکہ دوبارہ کھولنے پر فوراً نظر آئیں */
+const kv=(()=>{let db;const open=()=>db||(db=new Promise((ok,no)=>{const r=indexedDB.open("almanhaj",1);r.onupgradeneeded=()=>r.result.createObjectStore("kv");r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)}));
+  const tx=async(m,f)=>{const d=await open();return new Promise((ok,no)=>{const t=d.transaction("kv",m),q=f(t.objectStore("kv"));t.oncomplete=()=>ok(q&&q.result);t.onerror=()=>no(t.error)})};
+  return{get:k=>tx("readonly",s=>s.get(k)).catch(()=>undefined),set:(k,v)=>tx("readwrite",s=>s.put(v,k)).catch(()=>{})}})();
+const S={v:"",idx:[],art:{}},PAGE=10;let hits=[],shown=0,ready=false,saveT;
+const tokens=()=>{const q=norm($("q").value);return q?q.split(" "):[]};
+const fresh=r=>{const a=S.art[r[0]];return !!a&&(a.updated||"")===r[2]};
+function say(t){const n=$("none");n.textContent=t;n.hidden=!t}
+function persist(){clearTimeout(saveT);saveT=setTimeout(()=>{const live=new Set(S.idx.map(r=>r[0])),keep={};Object.keys(S.art).filter(k=>live.has(k)).slice(-400).forEach(k=>keep[k]=S.art[k]);kv.set("art",keep)},600)}
+async function fetchArts(ids){
+  const d=await(await fetch(API+"?action=get&ids="+ids.join(","),{cache:"no-store"})).json();
+  if(!d.ok)throw 0;d.items.forEach(x=>S.art[x.id]=x);persist();
+}
+function show(reset){
+  if(reset){list.textContent="";document.querySelectorAll("body>audio").forEach(a=>{a.pause();if(a.src.startsWith("blob:"))URL.revokeObjectURL(a.src);a.remove()});shown=0;const t=tokens();hits=t.length?S.idx.filter(r=>t.every(x=>r[4].includes(x))):S.idx}
+  const rows=hits.slice(shown,shown+PAGE),need=[];shown+=rows.length;
+  rows.forEach(r=>{
+    if(fresh(r))list.append(card(S.art[r[0]]));
+    else{const ph=el("article","card ph");ph.dataset.id=r[0];ph.append(el("h2",0,r[3]),el("div","bar"),el("div","bar"));list.append(ph);need.push(r[0])}
+  });
+  $("more").hidden=shown>=hits.length;
+  const t=tokens().length;
+  $("cnt").textContent=t&&hits.length?hits.length+" مضامین ملے":"";
+  say(hits.length?"":(t?"کوئی مضمون نہیں ملا۔ کوئی اور لفظ لکھ کر دیکھیں۔":"ابھی کوئی مضمون شائع نہیں ہوا۔"));
+  if(need.length)fetchArts(need).then(()=>need.forEach(id=>{const ph=list.querySelector('[data-id="'+id+'"]'),r=S.idx.find(x=>x[0]===id);if(ph&&r&&fresh(r))ph.replaceWith(card(S.art[id]))}))
+    .catch(()=>need.forEach(id=>{const ph=list.querySelector('[data-id="'+id+'"]');if(ph)ph.querySelectorAll(".bar").forEach((b,i)=>{b.className="";b.textContent=i?"":"لوڈ نہیں ہو سکا۔ دوبارہ کوشش کریں۔"})}));
+}
+async function init(){
+  const [c,a]=await Promise.all([kv.get("idx"),kv.get("art")]);
+  if(c&&c.idx){S.v=c.v;S.idx=c.idx;S.art=a||{};ready=true;show(true)}
+  else for(let i=0;i<2;i++){const ph=el("article","card ph");ph.append(el("div","bar"),el("div","bar"),el("div","bar"));list.append(ph)}
+  try{
+    const d=await(await fetch(API+"?action=boot&first=10&v="+encodeURIComponent(S.v),{cache:"no-store"})).json();
+    if(!d.ok)throw 0;
+    if(!d.same){S.v=d.v;S.idx=d.idx;(d.first||[]).forEach(x=>S.art[x.id]=x);kv.set("idx",{v:d.v,idx:d.idx});persist();ready=true;show(true)}
+    else if(!ready){ready=true;show(true)}
+  }catch(e){if(!ready){list.textContent="";say("مضامین لوڈ نہیں ہو سکے۔ صفحہ دوبارہ کھول کر دیکھیں۔")}}
+}
+$("more").addEventListener("click",()=>show(false));
+let raf;$("q").addEventListener("input",()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{if(ready)show(true)})});
+if("IntersectionObserver"in window)new IntersectionObserver(([e])=>$("find").classList.toggle("stuck",!e.isIntersecting)).observe($("sent"));
+const hdr=$("hdr"),setH=()=>document.documentElement.style.setProperty("--hh",hdr.offsetHeight+"px");setH();addEventListener("resize",setH);if(document.fonts)document.fonts.ready.then(setH);
+init();
+if("serviceWorker"in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+</script>
+</body>
+</html>
